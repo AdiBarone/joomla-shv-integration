@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.0" type="plugin" group="system" method="upgrade">
+	<name>SHV Games Synchronisation Plugin</name>
+	<author>Adi Barone</author>
+	<creationDate>May 2020</creationDate>
+	<authorEmail>adibarone@mac.com</authorEmail>
+	<version>2.0</version>
+	<description>This plugin syncs handball team results, games and rankings from handball.ch.</description>
+	<files>
+		<filename plugin="shvgames">shvgames.php</filename>
+		<filename>helper.php</filename>
+		<filename>class.mysql.php</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="cachetimeout" type="integer" label="Frequency (in unit)" first="0" last="120" step="1" default="30" filter="int" validate="number" />
+				<field name="lastrun" type="hidden" default="0" filter="integer" />
+				<field name="unit" type="list" label="Unit of time" default="86400" filter="integer" >
+					<option value="60">a minute</option>
+					<option value="3600">an hour</option>
+					<option value="86400">a day</option>
+				</field>
+				<field name="taskid" type="hidden" default="0" size="15" />
+
+				<field name="api-key" type="text" label="SHV API Key" />
+				<field name="clubs" type="text" label="Club Names" />
+				<field name="names" type="text" label="Names" />
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

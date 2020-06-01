@@ -1,0 +1,95 @@
+table.mod_shv_games_rankings,
+table.hcm-games
+{ width: 100%; }
+table.hcm-games td, table.hcm-games th,
+table.team-site td, table.team-site th { padding: 5px; }
+table.mod_shv_games_rankings tbody, table.mod_shv_games tfoot,
+table.team-site tbody, table.team-site tfoot 
+{ font-size: 12px; }
+table.mod_shv_games_rankings th { text-align: left; }
+table.mod_shv_games_rankings .hometeam td {
+	font-family: "OpenSansRegular", "OpenSans", "OpenSansLight" !important;
+	/*color: #fff;*/
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(0,0,0,0.2);
+}
+table.mod_shv_games_rankings .ranking  { text-align: center; width: 10px; }
+table.mod_shv_games_rankings .played  { text-align: center; }
+table.mod_shv_games_rankings .games  { text-align: center; width: 1%; }
+table.mod_shv_games_rankings .goals  { text-align: center; }
+table.mod_shv_games_rankings .games_played  { text-align: right; color: rgba(255,255,255,0.5); padding-right: 3px; }
+table.mod_shv_games_rankings .points  { text-align: right; }
+//table.team-site th { background: rgba(255,255,255,1); color: rgb(5,90,150); }
+table.team-site tr { border-bottom: 1px solid rgba(0,0,0,0.5); }
+table.team-site tr:nth-of-type(odd) { background: rgba(5,90,150,0.2); color: inherit; }
+table.mod_shv_games_rankings tr:nth-of-type(odd) { background: url(../images/table_zebra.png) 0 0 repeat; }
+table.mod_shv_games_rankings tr.rank-dp { background-color: rgba(0,192,96,0.5); }
+table.mod_shv_games_rankings tr.rank-pq { background-color: rgba(0,128,96,0.5); }
+table.mod_shv_games_rankings tr.rank-dq { background-color: rgba(128,0,0,0.5); }
+table.mod_shv_games_rankings tr.rank-dd { background-color: rgba(256,0,0,0.5); }
+
+p.mod_shv_games_rankings_team_link { padding-top: 10px; text-align: center;}
+
+table.mod_shv_games_games td { vertical-align: middle; }
+table.mod_shv_games_games td.result a { color: #fff; text-decoration: underline rgba(255,255,255,0.25); }
+table.mod_shv_games_games { width: 100%; }
+table.mod_shv_games_games th { text-align: left; }
+table.mod_shv_games_games th, table.mod_shv_games td { padding: 3px; }
+table.mod_shv_games_games tbody, table.mod_shv_games tfoot { font-size: 12px; }
+table.mod_shv_games_games tr.odd { background: url(../images/table_zebra.png) 0 0 repeat; }
+table.mod_shv_games_games .result { text-align: center; }
+table.mod_shv_games_games .result span.live,
+table.mod_shv_games_games .result span.ticker_time,
+table.mod_shv_games_games .result span.ticker_result {
+	display:block;
+	background: rgba(255,255,255,0.9);
+	border-left: 5px solid rgba(5,90,150,0.5);
+	border-right: 5px solid rgba(5,90,150,0.5);
+
+}
+@keyframes blink {
+	80% { visibility: hidden; }
+}
+table.mod_shv_games_games .result span.live * {
+	animation-duration: 1s;
+	animation-name: blink;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(10, start);
+}
+table.mod_shv_games_games .result span.ticker_result { font-size: 15px; }
+@keyframes blink { 50% { color: transparent; } }
+@-webkit-keyframes blink { 50% { color: transparent; } }
+table.mod_shv_games_games .result span.live { 
+	color: red; 
+	font-weight: bold; 
+	border-bottom: 1px solid rgba(255,0,0,0.5);
+	animation: blink 1s steps(1) infinite;
+	-webkit-animation: blink 1s steps(1) infinite;
+}
+table.mod_shv_games_games .result span.live a:visited,
+table.mod_shv_games_games .result span.live a:active,
+table.mod_shv_games_games .result span.live a { color: red !important; }
+table.mod_shv_games_games .result span.ticker_result { color: black; font-weight: bold; }
+table.mod_shv_games_games .result span.ticker_time { color: rgba(0,0,0,0.5); }
+table.mod_shv_games_games .winner { font-weight: bold; }
+table.mod_shv_games_games .league{ font-weight: bold; padding-left: 5px; }
+table.mod_shv_games_games .home{  text-align: right; }
+table.mod_shv_games_games .vs{ text-align: center; }
+table.mod_shv_games_games .guest{  text-align: left; }
+table.mod_shv_games_games .indicator  { display: inline-block; padding: 0 3px; }
+table.mod_shv_games_games .won  { color: rgba(0,192,96,0.7) }
+table.mod_shv_games_games .loss { color: rgba(256,0,0,0.7) }
+table.mod_shv_games_games .date{ text-size: 10px; padding-left: 3px; }
+table.mod_shv_games_games .hall{ text-align: right; text-size: 10px; }
+table.mod_shv_games_games .leader {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%) !important;
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.15) 0%,rgba(255,255,255,0.05) 100%) !important;
+	background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%,rgba(255,255,255,0.05) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26ffffff', endColorstr='#0dffffff',GradientType=0 ) !important;
+
+	border-top: 1px solid rgba(255,255,255,0.1);
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	border-left: 3px solid rgba(255,255,255,0.6);
+}
+
