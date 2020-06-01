@@ -34,8 +34,7 @@ class myCron extends JApplicationCli
 {
      public function doExecute()
      {
-         // require_once "shv_games.php";
-         // PlgSystemSHVGames::jobTask(); // <- wont work
+	// TODO
      }
 }
 
