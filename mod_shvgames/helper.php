@@ -1,7 +1,7 @@
 <?php
 /**
  * Helper class for SHV Games module
- * 
+ *
  * @package    site.shvgames
  * @subpackage Modules
  * @link http://docs.joomla.org/J3.x:Creating_a_simple_module/Developing_a_Basic_Module
@@ -18,7 +18,7 @@ class ModSHVGamesHelper
      * Initialize SHV Games
      *
      * @access public
-     */    
+     */
     public static function initialize() {
 
       $document = JFactory::getDocument();
@@ -37,7 +37,7 @@ class ModSHVGamesHelper
      * Retrieves the current season (if it's june, change to next season)
      *
      * @access public
-     */    
+     */
     public static function getSeason() {
 
       if( date("n") >= 6 ) {
@@ -53,9 +53,9 @@ class ModSHVGamesHelper
      * @teams   array  $teams An array containing several teams
      * @html    bool   $html A boolean trigger to set span-title html tag when shortening
      *
-     * @access private
-     */    
-    private static function shortenTeamNames($attributes, $teams, $html = true) {
+     * @access public
+     */
+    public static function shortenTeamNames($attributes, $teams, $html = true) {
       foreach( $attributes as $attribute ) {
         // $length     = $params->get('team-length', 23);    # string length
         $length     = 23;
@@ -80,7 +80,7 @@ class ModSHVGamesHelper
      * @name   string  $name A string containing the team name
      *
      * @access private
-     */    
+     */
     private static function getTeam($name) {
 
         $db = JFactory::getDbo();
@@ -103,12 +103,12 @@ class ModSHVGamesHelper
      * @show_time  bool $show_time a switch to show time or not
      *
      * @access public
-     */    
+     */
     public static function getDate( $ts, $show_time=1 ) {
 
       $day_begins = mktime(0,0,0,date("m"),date("d"),date("Y"));
       $str = "";
-    
+
       if ( $show_time != -1 ) {
         if( $ts > $day_begins && $ts < $day_begins + 86400 ) {
           $str = "heute ";
@@ -123,7 +123,7 @@ class ModSHVGamesHelper
           $str .= date(" Y",$ts);
         }
       }
-    
+
       if ( date("H:i",$ts) != "00:00" ) {
         if ( $show_time == 1 ) $str .= ', ';
         if ( $show_time != 0 ) $str .= date("H:i",$ts);
@@ -143,7 +143,7 @@ class ModSHVGamesHelper
      * @param   array  $params An object containing the module parameters
      *
      * @access public
-     */    
+     */
     public static function getRankings($params) {
 
         $team = ModSHVGamesHelper::getTeam($params->get('team_name'));
@@ -158,7 +158,7 @@ class ModSHVGamesHelper
         $teams = $db->loadAssocList();
 
         $teams = ModSHVGamesHelper::shortenTeamNames(array("team_name"), $teams);
-        
+
         return array(
           'team' => $team,
           'rankings' => $teams
@@ -171,7 +171,7 @@ class ModSHVGamesHelper
      * @param   array  $params An object containing the module parameters
      *
      * @access public
-     */    
+     */
     public static function getGames($params) {
 
       $teams = explode(",",$params->get("team_name"));
@@ -226,7 +226,7 @@ class ModSHVGamesHelper
      * @param   array  $params An object containing the module parameters
      *
      * @access public
-     */    
+     */
     public static function getResults($params) {
 
       $teams = explode(",",$params->get("team_name"));
